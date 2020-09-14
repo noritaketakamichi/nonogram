@@ -15,23 +15,18 @@ app.use(
 // Serve static assets
 app.use(express.static(path.resolve(__dirname, "..", "dist")));
 
-app.get("/api", async(req, res) => {
-    //return filtered locations
+app.get("/api/pictures/:id", async(req, res) => {
+    //指定されたidの絵のデータを返す
     try {
-        const state = req.query.state;
-        const city = req.query.city;
-        const highway = req.query.highway;
-        console.log(state, city, highway);
-        const locations = await db
+        const id = req.params.id;
+
+        const picture = await db
             .select()
             .where({
-                state: state,
-                city: city,
-                highway: highway,
+                id: id
             })
-            .from("locations");
-        console.log(`location:${locations}`);
-        res.json(locations);
+            .from("pictures");
+        res.json(picture);
     } catch (err) {
         console.error("Error loading locations!", err);
         res.sendStatus(500);
