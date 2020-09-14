@@ -16,11 +16,13 @@ function App() {
 		[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 		[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 		[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-	]);
+  ]);
+  
+  const[checkedList,setCheckedList]=useState([]);
 
 	return (
 		<div>
-			<Board picArray={picArray} />
+			<Board picArray={picArray} setPicArray={setPicArray} checkedList={checkedList} setCheckedList={setCheckedList}/>
 		</div>
 	);
 }
