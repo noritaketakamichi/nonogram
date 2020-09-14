@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.scss';
 import Board from './components/Board';
-import axios from 'axios-https-proxy-fix';
+import axios from 'axios';
 
 function App() {
 	//ボード
