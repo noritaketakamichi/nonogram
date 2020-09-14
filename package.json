@@ -21,12 +21,13 @@
         "sqlite3": "^5.0.0"
     },
     "scripts": {
-        "start": "node server && react-scripts start",
+        "start": "yarn setup && node server && react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
         "hack:server": "nodemon server",
-        "hack:client": "react-scripts start"
+        "hack:client": "react-scripts start",
+        "setup": "knex migrate:latest && knex seed:run"
     },
     "eslintConfig": {
         "extends": "react-app"
