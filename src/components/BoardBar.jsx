@@ -15,7 +15,8 @@ function BoardBar(props) {
 						picArray={props.picArray}
             setPicArray={props.setPicArray}
             checkedList={props.checkedList}
-						setCheckedList={props.setCheckedList}
+            setCheckedList={props.setCheckedList}
+            answerPic={props.answerPic}
 					/>
 				);
 			})}

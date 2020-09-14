@@ -49,7 +49,12 @@ function App() {
 				checkedList={checkedList}
 				setCheckedList={setCheckedList}
         numbers={numbers}
+        answerPic={answerPic}
 			/>
+      {(picArray===answerPic)
+       ?<p className="bigHello">helooo</p>
+       :<></>
+      }
 		</div>
 	);
 }

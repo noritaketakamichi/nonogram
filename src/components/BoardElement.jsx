@@ -19,6 +19,11 @@ function EachBoard(props) {
 
     console.log([xPos,yPos]);
     console.log(props.picArray);
+    console.log(props.answerPic[0]);
+    console.log(props.picArray[0]);
+
+    //正解の絵になった時trueとなる
+    console.log(JSON.stringify(props.answerPic)===JSON.stringify(props.picArray));
   }
 
   const xaxis=`x${props.xPos}`;
