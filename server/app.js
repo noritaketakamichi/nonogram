@@ -6,16 +6,16 @@ const db = require("./knex");
 const app = express();
 
 // Setup Logger
-app.use(
-    morgan(
-        ':remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] :response-time ms'
-    )
-);
+// app.use(
+//     morgan(
+//         ':remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] :response-time ms'
+//     )
+// );
 
 // Serve static assets
 app.use(express.static(path.resolve(__dirname, "..", "dist")));
 
-app.get("/api/pictures/:id", async(req, res) => {
+app.get("/api/picture/:id", async(req, res) => {
     //指定されたidの絵のデータを返す
     try {
         const id = req.params.id;
@@ -26,6 +26,7 @@ app.get("/api/pictures/:id", async(req, res) => {
                 id: id
             })
             .from("pictures");
+        res.set("Access-Control-Allow-Origin", "*");
         res.json(picture);
     } catch (err) {
         console.error("Error loading locations!", err);
@@ -34,8 +35,8 @@ app.get("/api/pictures/:id", async(req, res) => {
 });
 
 // Always return the main index.html, since we are developing a single page application
-app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "..", "dist", "index.html"));
-});
+// app.get("*", (req, res) => {
+//     res.sendFile(path.resolve(__dirname, "..", "dist", "index.html"));
+// });
 
 module.exports = app;
