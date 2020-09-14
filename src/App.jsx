@@ -21,24 +21,25 @@ function App() {
   const [answerPic, setAnswerPic] = useState([]);
 
 	const [checkedList, setCheckedList] = useState([]);
+  
+  //[上の数字][下の数字]
+  const [numbers, setNumbers] = useState([
+    ['', '', '', '', '', '', '', '', '', ''],
+    ['', '', '', '', '', '', '', '', '', ''],
+  ]);
 
 	useEffect(() => {
 		const getPicture = () => {
 			let url = 'http://localhost:5000/api/picture/1';
       const picture = axios.get(url).then(res=>{
         //set answer pic
-        setAnswerPic(res.data[0].picArray);
+        setAnswerPic(JSON.parse(res.data[0].picArray));
+        setNumbers(JSON.parse(res.data[0].numbers));
       });
 		};
     getPicture();
-    console.log(answerPic);
 	}, []);
 
-	//[上の数字][下の数字]
-	const [numbers, setNumbers] = useState([
-		['0', '1', '8', '9', '2 3', '1 3', '5', '3', '1', '0'],
-		['1　1', '5', '2', '2', '2', '6', '7', '6', '1　1', '1　1'],
-	]);
 
 	return (
 		<div>
