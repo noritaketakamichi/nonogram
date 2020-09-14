@@ -9,8 +9,8 @@ function BoardBar(props) {
 				const xaxis = `x${index}`;
 				return (
 					<EachBoard
-						xPos={props.xPos}
-						yPos={index}
+						xPos={index}
+						yPos={props.yPos}
 						array={elm}
 						picArray={props.picArray}
             setPicArray={props.setPicArray}

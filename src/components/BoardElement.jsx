@@ -11,9 +11,9 @@ function EachBoard(props) {
     const yPos=Number(classArr[2].slice(-1));
 
     //まだチェックされていない時
-    if(props.picArray[xPos][yPos]==0){
+    if(props.picArray[yPos][xPos]==0){
       props.setCheckedList([...props.checkedList,[xPos,yPos]]);
-      currentPicArray[xPos][yPos]=1;
+      currentPicArray[yPos][xPos]=1;
       props.setPicArray(currentPicArray);
     }
 

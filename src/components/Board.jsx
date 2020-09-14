@@ -15,7 +15,7 @@ function Board(props) {
 			{props.picArray.map((elm, index) => {
 				return (
 					<BoardBar
-						xPos={index}
+						yPos={index}
 						boardArray={elm}
 						picArray={props.picArray}
 						setPicArray={props.setPicArray}
