@@ -51,8 +51,8 @@ function App() {
         numbers={numbers}
         answerPic={answerPic}
 			/>
-      {(picArray===answerPic)
-       ?<p className="bigHello">helooo</p>
+      {(JSON.stringify(picArray)===JSON.stringify(answerPic))
+       ?<p className="bigHello">You completed!!!!</p>
        :<></>
       }
 		</div>
