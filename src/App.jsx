@@ -30,7 +30,7 @@ function App() {
 
 	useEffect(() => {
 		const getPicture = () => {
-			let url = 'http://localhost:5000/api/picture/1';
+			let url = 'api/picture/1';
       const picture = axios.get(url).then(res=>{
         //set answer pic
         setAnswerPic(JSON.parse(res.data[0].picArray));
