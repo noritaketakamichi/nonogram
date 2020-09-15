@@ -6,11 +6,11 @@ const db = require("./knex");
 const app = express();
 
 // Setup Logger
-// app.use(
-//     morgan(
-//         ':remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] :response-time ms'
-//     )
-// );
+app.use(
+    morgan(
+        ':remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] :response-time ms'
+    )
+);
 
 // Serve static assets
 app.use(express.static(path.resolve(__dirname, "..", "dist")));
@@ -19,6 +19,7 @@ app.get("/api/picture/:id", async(req, res) => {
     //指定されたidの絵のデータを返す
     try {
         const id = req.params.id;
+
 
         const picture = await db
             .select()
