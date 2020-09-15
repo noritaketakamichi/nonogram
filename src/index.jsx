@@ -22,7 +22,7 @@ const routing = (
   <Router>  
     <div>  
       <Route exact path="/" component={Top} />  
-      <Route path="/:id" component={Playing} />   
+      <Route path="/play/:id" component={Playing} />   
     </div>  
   </Router>  
 )  

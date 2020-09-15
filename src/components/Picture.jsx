@@ -11,7 +11,7 @@ function Picture(props) {
 			<p>{props.picture.name}</p>
             <p>made by {props.picture.author}</p>
 			<div className="playCard" onClick={(e) => {
-			history.push(`/${props.picture.id}/`);
+			history.push(`/play/${props.picture.id}/`);
 		}}><p className="playString">PLAY THIS</p></div>
 		</div>
 	);

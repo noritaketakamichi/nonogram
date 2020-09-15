@@ -9,7 +9,7 @@ function PictureList() {
 
 	useEffect(() => {
 		const getAllPictures = () => {
-			let url = 'api/allpictures';
+			let url = '/api/allpictures';
 			const picture = axios.get(url).then((res) => {
 				console.log(res.data);
 				//set answer pic

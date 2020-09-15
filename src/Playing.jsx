@@ -43,7 +43,7 @@ function App(props) {
 		const getPicture = () => {
 			
 			const { params } = props.match;
-			let url = `api/picture/${params.id}`;
+			let url = `/api/picture/${params.id}`;
 			const picture = axios.get(url).then((res) => {
 				console.log(res)
 				//set answer pic
