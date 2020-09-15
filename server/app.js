@@ -13,7 +13,7 @@ app.use(
 );
 
 // Serve static assets
-app.use(express.static(path.resolve(__dirname, "..", "dist")));
+app.use(express.static(path.resolve(__dirname, "..", "build")));
 
 app.get("/api/picture/:id", async(req, res) => {
     //指定されたidの絵のデータを返す
@@ -37,7 +37,7 @@ app.get("/api/picture/:id", async(req, res) => {
 
 // Always return the main index.html, since we are developing a single page application
 app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "..", "dist", "index.html"));
+    res.sendFile(path.resolve(__dirname, "..", "build", "index.html"));
 });
 
 module.exports = app;
