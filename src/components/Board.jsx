@@ -5,17 +5,17 @@ import classNames from 'classnames';
 
 function Board(props) {
 	return (
-		<div >
+		<div>
 			{/* チェックされた箇所のリスト */}
 			{props.checkedList.map((elm) => {
-        let elemType;
-        if(elm[2]==0){
-          elemType="whiteElem"
-        }else if(elm[2]==2){
-          elemType="batsuElem"
-        }else{
-          elemType="blackElem"
-        }
+				let elemType;
+				if (elm[2] == 0) {
+					elemType = 'whiteElem';
+				} else if (elm[2] == 2) {
+					elemType = 'batsuElem';
+				} else {
+					elemType = 'blackElem';
+				}
 
 				return <div className={classNames(elemType, `x${elm[0]}`, `y${elm[1]}`)}></div>;
 			})}
@@ -29,9 +29,10 @@ function Board(props) {
 						picArray={props.picArray}
 						setPicArray={props.setPicArray}
 						checkedList={props.checkedList}
-            setCheckedList={props.setCheckedList}
-            answerPic={props.answerPic}
-            selectedIcon={props.selectedIcon}
+						setCheckedList={props.setCheckedList}
+						answerPic={props.answerPic}
+						selectedIcon={props.selectedIcon}
+						picName={props.picName}
 					/>
 				);
 			})}

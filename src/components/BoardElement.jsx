@@ -22,8 +22,11 @@ function EachBoard(props) {
 		console.log(props.picArray);
 		console.log(props.answerPic);
 
-		//正解の絵になった時trueとなる
+		//正解の絵になった時trueとなり、alertを表示
 		console.log(JSON.stringify(props.answerPic) === JSON.stringify(props.picArray));
+		if(JSON.stringify(props.answerPic) === JSON.stringify(props.picArray)){
+			alert(`You completed 【${props.picName}】!!:)`)
+		}
 	};
 
 	const xaxis = `x${props.xPos}`;

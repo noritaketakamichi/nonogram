@@ -65,15 +65,9 @@ function App(props) {
 				numbers={numbers}
 				answerPic={answerPic}
 				selectedIcon={selectedIcon}
+				picName={picName}
 			/>
 			<Icons selectedIcon={selectedIcon} setSelectedIcon={setSelectedIcon} />
-			{JSON.stringify(picArray) === JSON.stringify(answerPic) ? (
-				<div className="completeBox">
-					<p className="completMessage">You completed 【{picName}】!!:)</p>
-				</div>
-			) : (
-				<></>
-			)}
 		</div>
 	);
 }
