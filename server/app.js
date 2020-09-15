@@ -15,6 +15,22 @@ app.use(
 // Serve static assets
 app.use(express.static(path.resolve(__dirname, "..", "build")));
 
+app.get("/api/allpictures", async(req, res) => {
+    //全ての絵のデータを返す
+    try {
+
+
+        const allPictures = await db
+            .select()
+            .from("pictures");
+        res.set("Access-Control-Allow-Origin", "*");
+        res.json(allPictures);
+    } catch (err) {
+        console.error("Error loading locations!", err);
+        res.sendStatus(500);
+    }
+});
+
 app.get("/api/picture/:id", async(req, res) => {
     //指定されたidの絵のデータを返す
     try {

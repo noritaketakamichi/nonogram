@@ -8,6 +8,7 @@ exports.seed = async function(knex) {
         for (let picture of pictures) {
             let name = picture.name;
             let id = picture.id;
+            let author = picture.author;
             let numbers = JSON.stringify(picture.numbers);
             let picArray = JSON.stringify(picture.picArray);
 
@@ -20,6 +21,7 @@ exports.seed = async function(knex) {
                     return db('pictures').insert([{
                         id: id,
                         name: name,
+                        author: author,
                         numbers: numbers,
                         picArray: picArray,
                     }, ])

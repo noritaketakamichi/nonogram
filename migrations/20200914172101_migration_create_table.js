@@ -4,6 +4,8 @@ exports.up = function(knex) {
 
         table.text("name");
 
+        table.text("author");
+
         table.text("numbers");
 
         table.text("picArray");
