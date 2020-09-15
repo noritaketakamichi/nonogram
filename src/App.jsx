@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.scss';
 import Board from './components/Board';
+import Icons from './components/Icons';
 import axios from 'axios';
 
 function App() {
@@ -51,6 +52,7 @@ function App() {
         numbers={numbers}
         answerPic={answerPic}
 			/>
+      <Icons/>
       {(JSON.stringify(picArray)===JSON.stringify(answerPic))
        ?<p className="bigHello">You completed!!!!</p>
        :<></>
