@@ -5,7 +5,7 @@ import classNames from 'classnames';
 
 function Board(props) {
 	return (
-		<div className="board">
+		<div >
 			{/* チェックされた箇所のリスト */}
 			{props.checkedList.map((elm) => {
 				return <div className={classNames('checked', `x${elm[0]}`, `y${elm[1]}`)}></div>;

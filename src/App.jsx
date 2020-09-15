@@ -42,7 +42,7 @@ function App() {
 
 
 	return (
-		<div>
+		<div className="board">
 			<Board
 				picArray={picArray}
 				setPicArray={setPicArray}
