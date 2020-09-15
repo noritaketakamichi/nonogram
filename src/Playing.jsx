@@ -4,7 +4,7 @@ import Board from './components/Board';
 import Icons from './components/Icons';
 import axios from 'axios';
 
-function App() {
+function App(props) {
 	//ボード
 	const [picArray, setPicArray] = useState([
 		[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -38,14 +38,18 @@ function App() {
 	//0=>白 1=>黒　2=>バツ
 	const [selectedIcon, setSelectedIcon] = useState(1);
 
+	
 	useEffect(() => {
 		const getPicture = () => {
-			let url = 'api/picture/1';
+			
+			const { params } = props.match;
+			let url = `api/picture/${params.id}`;
 			const picture = axios.get(url).then((res) => {
+				console.log(res)
 				//set answer pic
 				setAnswerPic(JSON.parse(res.data[0].picArray));
-        setNumbers(JSON.parse(res.data[0].numbers));
-        setPicName(res.data[0].name);
+				setNumbers(JSON.parse(res.data[0].numbers));
+				setPicName(res.data[0].name);
 			});
 		};
 		getPicture();
