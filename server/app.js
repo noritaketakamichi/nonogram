@@ -35,8 +35,8 @@ app.get("/api/picture/:id", async(req, res) => {
 });
 
 // Always return the main index.html, since we are developing a single page application
-// app.get("*", (req, res) => {
-//     res.sendFile(path.resolve(__dirname, "..", "dist", "index.html"));
-// });
+app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "..", "dist", "index.html"));
+});
 
 module.exports = app;
