@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import Top from './Top';
 import Playing from './Playing';
+import Create from './Create';
 import * as serviceWorker from './serviceWorker';
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom'  
 
@@ -23,6 +24,7 @@ const routing = (
     <div>  
       <Route exact path="/" component={Top} />  
       <Route path="/play/:id" component={Playing} />   
+      <Route path="/create" component={Create} /> 
     </div>  
   </Router>  
 )  

@@ -2,7 +2,7 @@ import React from 'react';
 import '../App.scss';
 import classNames from 'classnames';
 
-function EachBoard(props) {
+function C_EachBoard(props) {
 	const clicked = (e) => {
 		const classArr = e.target.className.split(' ');
 		const currentPicArray = props.picArray;
@@ -34,4 +34,4 @@ function EachBoard(props) {
 	return <div className={classNames('boardElem', xaxis, yaxis)} onClick={clicked}></div>;
 }
 
-export default EachBoard;
+export default C_EachBoard;

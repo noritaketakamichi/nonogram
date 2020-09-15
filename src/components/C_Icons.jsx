@@ -10,11 +10,6 @@ function Board(props) {
         console.log(0);
     }
 
-    const setbatsu=()=>{
-        props.setSelectedIcon(2);
-        console.log(1);
-    }
-
     const setwhite=()=>{
         props.setSelectedIcon(0);
         console.log(2);
@@ -23,7 +18,6 @@ function Board(props) {
 	return (
 		<div className="iconBoard">
             <div className={classNames("icon","blackIcon",{selectedIcon:(props.selectedIcon===1)})} onClick={setblack}></div>
-            <div className={classNames("icon","batsuIcon",{selectedIcon:(props.selectedIcon===2)})} onClick={setbatsu}></div>
             <div className={classNames("icon","whteIcon",{selectedIcon:(props.selectedIcon===0)})} onClick={setwhite}></div>
 		</div>
 	);

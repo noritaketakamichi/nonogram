@@ -1,9 +1,9 @@
 import React from 'react';
 import '../App.scss';
-import BoardBar from './BoardBar';
+import C_BoardBar from './C_BoardBar';
 import classNames from 'classnames';
 
-function Board(props) {
+function C_Board(props) {
 	return (
 		<div>
 			{/* チェックされた箇所のリスト */}
@@ -23,7 +23,7 @@ function Board(props) {
 			{/* マスのリスト */}
 			{props.picArray.map((elm, index) => {
 				return (
-					<BoardBar
+					<C_BoardBar
 						yPos={index}
 						boardArray={elm}
 						picArray={props.picArray}
@@ -36,24 +36,8 @@ function Board(props) {
 					/>
 				);
 			})}
-			{/* 上と左の数字 */}
-			{props.numbers[0].map((elm, index) => {
-				return (
-					<div className={classNames('upperBar', `upper${index}`)}>
-						<p className="upperNumbers">{elm}</p>
-					</div>
-				);
-			})}
-
-			{props.numbers[1].map((elm, index) => {
-				return (
-					<div className={classNames('leftBar', `left${index}`)}>
-						<p className="leftNumbers">{elm}</p>
-					</div>
-				);
-			})}
 		</div>
 	);
 }
 
-export default Board;
+export default C_Board;

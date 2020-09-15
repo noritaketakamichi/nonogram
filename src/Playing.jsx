@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.scss';
 import Board from './components/Board';
 import Icons from './components/Icons';
+import Navbar from './components/Navbar';
 import axios from 'axios';
 
 function App(props) {
@@ -56,6 +57,8 @@ function App(props) {
 	}, []);
 
 	return (
+		<>
+		<Navbar />
 		<div className="board">
 			<Board
 				picArray={picArray}
@@ -69,6 +72,7 @@ function App(props) {
 			/>
 			<Icons selectedIcon={selectedIcon} setSelectedIcon={setSelectedIcon} />
 		</div>
+		</>
 	);
 }
 
