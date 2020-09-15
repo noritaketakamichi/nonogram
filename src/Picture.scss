@@ -1,5 +1,17 @@
 .pictureflame {
     background-color: paleturquoise;
-    width: 50%;
+    width: 30%;
     height: 20vh;
+}
+
+.playCard {
+    background-color: red;
+    width: 50%;
+    height: 20%;
+    cursor: pointer;
+}
+
+.playString {
+    color: yellow;
+    font-size: medium;
 }
