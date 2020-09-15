@@ -32,8 +32,8 @@ function App() {
   ]);
 
   //選択されたアイコン
-  //0=>黒 1=>バツ　2=>白
-  const [selectedIcon,setSelectedIcon]=useState(0)
+  //0=>白 1=>黒　2=>バツ
+  const [selectedIcon,setSelectedIcon]=useState(1)
 
 	useEffect(() => {
 		const getPicture = () => {
@@ -57,6 +57,7 @@ function App() {
 				setCheckedList={setCheckedList}
         numbers={numbers}
         answerPic={answerPic}
+        selectedIcon={selectedIcon}
 			/>
       <Icons selectedIcon={selectedIcon} setSelectedIcon={setSelectedIcon}/>
       {(JSON.stringify(picArray)===JSON.stringify(answerPic))

@@ -8,7 +8,16 @@ function Board(props) {
 		<div >
 			{/* チェックされた箇所のリスト */}
 			{props.checkedList.map((elm) => {
-				return <div className={classNames('checked', `x${elm[0]}`, `y${elm[1]}`)}></div>;
+        let elemType;
+        if(elm[2]==0){
+          elemType="whiteElem"
+        }else if(elm[2]==2){
+          elemType="batsuElem"
+        }else{
+          elemType="blackElem"
+        }
+
+				return <div className={classNames(elemType, `x${elm[0]}`, `y${elm[1]}`)}></div>;
 			})}
 
 			{/* マスのリスト */}
@@ -22,6 +31,7 @@ function Board(props) {
 						checkedList={props.checkedList}
             setCheckedList={props.setCheckedList}
             answerPic={props.answerPic}
+            selectedIcon={props.selectedIcon}
 					/>
 				);
 			})}
