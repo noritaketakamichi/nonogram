@@ -30,13 +30,13 @@
     background-color: black;
 }
 
-.checkedIcon {
+.batsuIcon {
     top: 45%;
     border: 1px solid black;
 }
 
-.checkedIcon::before,
-.checkedIcon::after {
+.batsuIcon::before,
+.batsuIcon::after {
     content: "";
     display: block;
     width: 100%;
@@ -51,7 +51,7 @@
     left: 14%;
 }
 
-.checkedIcon::after {
+.batsuIcon::after {
     transform: rotate(-45deg);
     transform-origin: 100% 50%;
     left: auto;
