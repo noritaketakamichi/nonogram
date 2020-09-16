@@ -6,8 +6,9 @@ This was created during my time as a student at Code Chrysalis.
 In the project directory, you can run:
 
 ### `yarn setup`
-Youcan migrate table and seed data.
-Before this, create database that name is ``nonogram``
+Youcan migrate table and seed data.<br />
+Before this, create database that name is ``nonogram``<br />
+This app use postgres database.
 
 ### `yarn hack:client`
 
@@ -29,7 +30,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ### `yarn hack:server`
 
-Runs server in the development mode.<br />
+Runs server in the development mode.(http://localhost:5000)<br />
 The server will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
@@ -39,4 +40,5 @@ Migrate table and seed data,runs server, runs client.<br />
 You can start only this command
 
 
-
+## Personal setting
+You should make .env file and write database URL.
