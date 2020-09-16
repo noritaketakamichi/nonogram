@@ -44,11 +44,12 @@ function App(props) {
             setPicName={setPicName}
             setIntro={setIntro}
             setAuthorName={setAuthorName}
+            setPicArray={setPicArray}
+            setCheckedList={setCheckedList}
             picArray={picArray}
             authorName={authorName}
             picName={picName}
             intro={intro}
-
             />
 			<div className="board">
 				<C_Board
@@ -56,7 +57,8 @@ function App(props) {
 					setPicArray={setPicArray}
 					checkedList={checkedList}
 					setCheckedList={setCheckedList}
-					selectedIcon={selectedIcon}
+                    selectedIcon={selectedIcon}
+                    setPicArray={setPicArray}
 				/>
 				<C_Icons selectedIcon={selectedIcon} setSelectedIcon={setSelectedIcon} />
 			</div>

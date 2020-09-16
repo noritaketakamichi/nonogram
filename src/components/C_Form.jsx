@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{ useRef } from 'react';
 import '../Create.scss';
 import axios from 'axios';
 import classNames from 'classnames';
@@ -8,18 +8,27 @@ function C_Form(props) {
 		//名前をセット
 		console.log(e.target.value);
 		props.setAuthorName(e.target.value);
-	};
+    };
+    
 	const nameChange = (e) => {
 		//名前をセット
 		console.log(e.target.value);
 		props.setPicName(e.target.value);
 	};
+
 	const introChange = (e) => {
 		//イントロをセット
 		console.log(e.target.value);
 		props.setIntro(e.target.value);
 	};
+
 	const submit = async () => {
+        //全て記入していないと提出できない
+        if(!(checkAllFilled())){
+            alert("Please fill all");
+            return;
+        }
+
 		//絵から縦と横の鍵を導いてsubmit
 		console.log(props.picArray);
 
@@ -54,7 +63,7 @@ function C_Form(props) {
 		//各要素を文字列化
 		const mappedVerticalKey = verticalKey.map((array) => {
 			if (array.length === 0) {
-				return "0";
+				return '0';
 			} else {
 				return array.join(' ');
 			}
@@ -87,51 +96,91 @@ function C_Form(props) {
 		console.log(lateralKey);
 
 		//各要素を文字列化
-        const mappedLateralKey = lateralKey.map((array) => {
+		const mappedLateralKey = lateralKey.map((array) => {
 			if (array.length === 0) {
-				return "0";
+				return '0';
 			} else {
 				return array.join('　');
 			}
 		});
 
-        //ついに縦と横の鍵の文字列がここに完成
+		//ついに縦と横の鍵の文字列がここに完成
 		const stringKeys = JSON.stringify([mappedVerticalKey, mappedLateralKey]);
-        console.log(stringKeys);
-        
-        //あとはpostメソッドで送信するだけである
-        //送るデータ
-        const dataToSend={
-            "name":props.picName,
-            "author":props.authorName,
-            "introduction":props.intro,
-            "numbers":stringKeys,
-            "picArray":JSON.stringify(props.picArray)
+		console.log(stringKeys);
+
+		//あとはpostメソッドで送信するだけである
+		//送るデータ
+		const dataToSend = {
+			name: props.picName,
+			author: props.authorName,
+			introduction: props.intro,
+			numbers: stringKeys,
+			picArray: JSON.stringify(props.picArray),
+		};
+
+		const postURL = '/api/picture/';
+		const res = await axios.post(postURL, dataToSend);
+		console.log(res);
+		if (res.status === 200) {
+			alert('Thank you for creating new pic!! :)');
+		}
+
+		// 全て元に戻す
+		setAllDefault();
+    };
+    const allZeroArray = [
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    ];
+    
+    const checkAllFilled=()=>{
+        if(props.authorName===""||props.picName===""||props.intro===""||props.picArray===allZeroArray){
+            return false;
         }
+        return true;
+    }
 
-        const postURL='/api/picture/';
-        const res = await axios.post(postURL,dataToSend);
-
-	};
+	const setAllDefault = () => {
+        authorRef.current.value="";
+        nameRef.current.value="";
+        introRef.current.value="";
+		props.setPicName('');
+		props.setAuthorName('');
+		props.setIntro('');
+		props.setPicArray(allZeroArray);
+		props.setCheckedList([]);
+    };
+    
+    const authorRef = useRef();
+    const nameRef = useRef();
+    const introRef = useRef();
 	return (
 		<div className="formbar">
 			<div className="textforms">
 				<div>
 					<label>
 						Your name
-						<input className="nameform" type="text" onChange={authorChange} />
+						<input ref={authorRef} className="nameform" type="text" onChange={authorChange} />
 					</label>
 				</div>
 				<div>
 					<label>
 						Name of pic
-						<input className="nameform" type="text" onChange={nameChange} />
+						<input ref={nameRef} className="nameform" type="text" onChange={nameChange} />
 					</label>
 				</div>
 				<div>
 					<label>
 						Introduction of this picture
-						<input className="introform" type="text" onChange={introChange}></input>
+						<input ref={introRef} className="introform" type="text" onChange={introChange}></input>
 					</label>
 				</div>
 			</div>
