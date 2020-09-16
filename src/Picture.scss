@@ -1,17 +1,23 @@
 .pictureflame {
     background-color: paleturquoise;
     width: 30%;
-    height: 20vh;
+    text-align: center;
 }
 
 .playCard {
     background-color: red;
     width: 50%;
-    height: 20%;
+    margin: 0 auto;
+    margin-bottom: 10px;
     cursor: pointer;
 }
 
 .playString {
     color: yellow;
-    font-size: medium;
+    font-size: larger;
+}
+
+.picTitle {
+    font-size: larger;
+    // margin: 1px auto;
 }
