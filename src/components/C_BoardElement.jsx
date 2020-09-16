@@ -9,13 +9,13 @@ function C_EachBoard(props) {
 		const xPos = Number(classArr[1].slice(-1));
 		const yPos = Number(classArr[2].slice(-1));
 
-    //ますを上書き、現在のボード状態を伝達
-    props.setCheckedList([...props.checkedList, [xPos, yPos, props.selectedIcon]]);
+		//ますを上書き、現在のボード状態を伝達
+		props.setCheckedList([...props.checkedList, [xPos, yPos, props.selectedIcon]]);
 
-    //黒か白で塗る時はボードを更新
-    if(props.selectedIcon!==2){
-      currentPicArray[yPos][xPos] = props.selectedIcon;
-    }
+		//黒か白で塗る時はボードを更新
+		if (props.selectedIcon !== 2) {
+			currentPicArray[yPos][xPos] = props.selectedIcon;
+		}
 		props.setPicArray(currentPicArray);
 
 		console.log([xPos, yPos]);
@@ -24,8 +24,8 @@ function C_EachBoard(props) {
 
 		//正解の絵になった時trueとなり、alertを表示
 		console.log(JSON.stringify(props.answerPic) === JSON.stringify(props.picArray));
-		if(JSON.stringify(props.answerPic) === JSON.stringify(props.picArray)){
-			alert(`You completed 【${props.picName}】!!:)`)
+		if (JSON.stringify(props.answerPic) === JSON.stringify(props.picArray)) {
+			alert(`You completed 【${props.picName}】!!:)`);
 		}
 	};
 

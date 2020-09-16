@@ -1,5 +1,6 @@
 import React from 'react';
 import '../Create.scss';
+import axios from 'axios';
 import classNames from 'classnames';
 
 function C_Form(props) {
@@ -18,7 +19,7 @@ function C_Form(props) {
 		console.log(e.target.value);
 		props.setIntro(e.target.value);
 	};
-	const submit = () => {
+	const submit = async () => {
 		//絵から縦と横の鍵を導いてsubmit
 		console.log(props.picArray);
 
@@ -99,6 +100,18 @@ function C_Form(props) {
         console.log(stringKeys);
         
         //あとはpostメソッドで送信するだけである
+        //送るデータ
+        const dataToSend={
+            "name":props.picName,
+            "author":props.authorName,
+            "introduction":props.intro,
+            "numbers":stringKeys,
+            "picArray":JSON.stringify(props.picArray)
+        }
+
+        const postURL='/api/picture/';
+        const res = await axios.post(postURL,dataToSend);
+
 	};
 	return (
 		<div className="formbar">
