@@ -7,7 +7,8 @@ function C_Form(props) {
 	const authorChange = (e) => {
 		//名前をセット
 		console.log(e.target.value);
-		props.setAuthorName(e.target.value);
+        props.setAuthorName(e.target.value);
+        console.log(JSON.stringify(props.picArray));
     };
     
 	const nameChange = (e) => {

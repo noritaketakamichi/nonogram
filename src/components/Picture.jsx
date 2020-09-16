@@ -8,7 +8,7 @@ function Picture(props) {
 	const history = useHistory();
 	return (
 		<div className="pictureflame" >
-			<p>{props.picture.name}</p>
+			<p>{props.picture.introduction}</p>
             <p>made by {props.picture.author}</p>
 			<div className="playCard" onClick={(e) => {
 			history.push(`/play/${props.picture.id}/`);
