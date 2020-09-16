@@ -2,6 +2,7 @@ const express = require("express");
 const morgan = require("morgan");
 const path = require("path");
 const db = require("./knex");
+const knexfile = require("../knexfile");
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.use(
 
 // Serve static assets
 app.use(express.static(path.resolve(__dirname, "..", "build")));
+app.use(express.json());
 
 app.get("/api/allpictures", async(req, res) => {
     //全ての絵のデータを返す
@@ -43,6 +45,31 @@ app.get("/api/picture/:id", async(req, res) => {
                 id: id
             })
             .from("pictures");
+        res.set("Access-Control-Allow-Origin", "*");
+        res.json(picture);
+    } catch (err) {
+        console.error("Error loading locations!", err);
+        res.sendStatus(500);
+    }
+});
+
+app.post("/api/picture/", async(req, res) => {
+    //作った絵を登録
+    try {
+        const data = req.body;
+
+        console.log(111111111);
+        console.log(req.body);
+
+        const picture = await db
+            .insert({
+                name: data.name,
+                introduction: data.introduction,
+                author: data.author,
+                numbers: data.numbers,
+                picArray: data.picArray
+            }).into('pictures')
+
         res.set("Access-Control-Allow-Origin", "*");
         res.json(picture);
     } catch (err) {

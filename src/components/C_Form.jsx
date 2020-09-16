@@ -94,8 +94,11 @@ function C_Form(props) {
 			}
 		});
 
+        //ついに縦と横の鍵の文字列がここに完成
 		const stringKeys = JSON.stringify([mappedVerticalKey, mappedLateralKey]);
-		console.log(stringKeys);
+        console.log(stringKeys);
+        
+        //あとはpostメソッドで送信するだけである
 	};
 	return (
 		<div className="formbar">
