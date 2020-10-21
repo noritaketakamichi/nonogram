@@ -20,7 +20,7 @@ function Top() {
 					history.push(`/create`);
 				}}
 			>
-				Create Pic
+				<div>Create Pic</div>
 			</div>
 		</div>
 	);

@@ -8,16 +8,19 @@ function C_Board(props) {
 		<div>
 			{/* チェックされた箇所のリスト */}
 			{props.checkedList.map((elm) => {
-				let elemType;
-				if (elm[2] === 0) {
-					elemType = 'whiteElem';
-				} else if (elm[2] === 2) {
-					elemType = 'batsuElem';
-				} else {
-					elemType = 'blackElem';
-				}
+				// let elemType;
+				// if (elm[2] === 0) {
+				// 	elemType = 'whiteElem';
+				// } else if (elm[2] === 2) {
+				// 	elemType = 'batsuElem';
+				// } else {
+				// 	elemType = 'blackElem';
+				// }
+				const arr=JSON.parse(elm)
+				console.log(arr);
+				console.log(props.checkedList);
 
-				return <div className={classNames(elemType, `x${elm[0]}`, `y${elm[1]}`)}></div>;
+				return <div className={classNames('blackElem', `x${arr[0]}`, `y${arr[1]}`)}></div>;
 			})}
 
 			{/* マスのリスト */}

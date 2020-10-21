@@ -1,5 +1,5 @@
 .navbarflame {
-    width: 100%;
+    // width: 100vw;
     height: 15vh;
     background-color: yellowgreen;
     position: relative;
@@ -17,7 +17,7 @@
 
 .moveToCreate {
     position: absolute;
-    width: 10%;
+    width: 30%;
     height: 40%;
     right: 2%;
     top: 30%;
@@ -25,4 +25,7 @@
     color: white;
     font-size: larger;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
 }
