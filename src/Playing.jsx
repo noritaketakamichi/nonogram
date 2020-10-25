@@ -51,6 +51,7 @@ function App(props) {
 				setAnswerPic(JSON.parse(res.data[0].picArray));
 				setNumbers(JSON.parse(res.data[0].numbers));
 				setPicName(res.data[0].name);
+				console.log(JSON.parse(res.data[0].numbers));
 			});
 		};
 		getPicture();

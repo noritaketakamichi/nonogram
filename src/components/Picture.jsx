@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import '../Picture.scss';
-import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 
 function Picture(props) {
