@@ -42,8 +42,8 @@ function App(props) {
 	
 	useEffect(() => {
 		const getPicture = () => {
-			
 			const { params } = props.match;
+			console.log(params);
 			let url = `/api/picture/${params.id}`;
 			const picture = axios.get(url).then((res) => {
 				console.log(res)
