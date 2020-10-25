@@ -206,8 +206,8 @@
   width: 10%;
   height: 100%;
   bottom: 100%;
-//   writing-mode: vertical-rl;
-//   text-orientation: upright;
+  //   writing-mode: vertical-rl;
+  //   text-orientation: upright;
   font-size: 22px;
 }
 
@@ -215,17 +215,26 @@
   /* フレックスコンテナであることを指定 */
   display: flex;
 
-  /* 軸の設定(既定値がrowなので省略可能) */
-//   flex-direction: row;
-
   /* 主軸：左右の配置 */
   justify-content: space-between;
 
   /* 交差軸：上下の配置 */
   align-items: flex-end;
 }
-.upperLine{
-    line-height: 5px;
+.upperLine {
+//   margin: 10px auto;
+  line-height: 0px;
+}
+
+.center{
+    width:100%;
+}
+
+.bottom{
+    position:absolute;                  
+    bottom:0; 
+    width:100%;
+    text-align: center;
 }
 
 .leftBar {

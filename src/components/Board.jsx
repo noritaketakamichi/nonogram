@@ -52,12 +52,12 @@ function Board(props) {
           //   <div className="upperBarContainer">
           <div
             className={classNames(
-              "upperBarContainer",
+            //   "upperBarContainer",
               "upperBar",
               `upper${index}`
             )}
           >
-            <div>
+            <div className="bottom">
               {/* <p className="upperNumbers">{elm}</p> */}
               {elm.split(" ").map((num) => {
                 console.log("upperNum", num);
