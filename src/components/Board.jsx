@@ -46,7 +46,7 @@ function Board(props) {
       {/* 上 */}
 
       {props.numbers[0].map((elm, index) => {
-		  console.log("upper",elm);
+        console.log("upper", elm);
         return (
           //   <div className="upperBarContainer">
           <div
@@ -59,6 +59,7 @@ function Board(props) {
             <div>
               {/* <p className="upperNumbers">{elm}</p> */}
               {elm.split(" ").map((num) => {
+                console.log("upperNum", num);
                 return <p className="upperLine">{num}</p>;
               })}
             </div>
