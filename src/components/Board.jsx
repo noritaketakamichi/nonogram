@@ -46,7 +46,8 @@ function Board(props) {
       {/* 上 */}
 
       {props.numbers[0].map((elm, index) => {
-        console.log(`upper【${elm}】`);
+		console.log(`upper【${elm}】`);
+		console.log(elm.split(" "));
         return (
           //   <div className="upperBarContainer">
           <div
