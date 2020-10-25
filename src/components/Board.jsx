@@ -27,17 +27,19 @@ function Board(props) {
       {/* マスのリスト */}
       {props.picArray.map((elm, index) => {
         return (
-          <BoardBar
-            yPos={index}
-            boardArray={elm}
-            picArray={props.picArray}
-            setPicArray={props.setPicArray}
-            checkedList={props.checkedList}
-            setCheckedList={props.setCheckedList}
-            answerPic={props.answerPic}
-            selectedIcon={props.selectedIcon}
-            picName={props.picName}
-          />
+          <div>
+            <BoardBar
+              yPos={index}
+              boardArray={elm}
+              picArray={props.picArray}
+              setPicArray={props.setPicArray}
+              checkedList={props.checkedList}
+              setCheckedList={props.setCheckedList}
+              answerPic={props.answerPic}
+              selectedIcon={props.selectedIcon}
+              picName={props.picName}
+            />
+          </div>
         );
       })}
       {/* 上と左の数字 */}
@@ -56,7 +58,7 @@ function Board(props) {
             <div>
               {/* <p className="upperNumbers">{elm}</p> */}
               {elm.split(" ").map((num) => {
-                return <p　className="upperLine">{num}</p>;
+                return <p className="upperLine">{num}</p>;
               })}
             </div>
           </div>
