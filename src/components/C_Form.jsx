@@ -101,7 +101,7 @@ function C_Form(props) {
 			if (array.length === 0) {
 				return '0';
 			} else {
-				return array.join('　');
+				return array.join(' ');
 			}
 		});
 
