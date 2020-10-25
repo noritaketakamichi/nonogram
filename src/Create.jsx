@@ -51,7 +51,7 @@ function App(props) {
             picName={picName}
             intro={intro}
             />
-			<div className="board">
+			<div className="boardCreate">
 				<C_Board
 					picArray={picArray}
 					setPicArray={setPicArray}
