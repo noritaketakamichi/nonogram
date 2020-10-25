@@ -4,9 +4,13 @@
     position: relative;
 }
 
+.margin {
+    margin: 0.5em;
+}
+
 .textforms {
     position: absolute;
-    width: 50%;
+    width: 60vw;
     height: 20%;
     left: 2%;
     top: 0;
@@ -22,7 +26,7 @@
 
 .submit {
     position: absolute;
-    width: 10%;
+    width: 20vw;
     height: 40%;
     right: 2%;
     top: 30%;

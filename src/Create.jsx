@@ -60,7 +60,7 @@ function App(props) {
                     selectedIcon={selectedIcon}
                     setPicArray={setPicArray}
 				/>
-				<C_Icons selectedIcon={selectedIcon} setSelectedIcon={setSelectedIcon} />
+				{/* <C_Icons selectedIcon={selectedIcon} setSelectedIcon={setSelectedIcon} /> */}
 			</div>
 		</>
 	);

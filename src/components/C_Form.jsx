@@ -166,19 +166,19 @@ function C_Form(props) {
 	return (
 		<div className="formbar">
 			<div className="textforms">
-				<div>
+				<div className="margin">
 					<label>
 						Your name
 						<input ref={authorRef} className="nameform" type="text" onChange={authorChange} />
 					</label>
 				</div>
-				<div>
+				<div className="margin">
 					<label>
 						Name of pic
 						<input ref={nameRef} className="nameform" type="text" onChange={nameChange} />
 					</label>
 				</div>
-				<div>
+				<div className="margin">
 					<label>
 						Introduction of this picture
 						<input ref={introRef} className="introform" type="text" onChange={introChange}></input>
