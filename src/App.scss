@@ -10,8 +10,7 @@
 
 .iconBoard {
     position: absolute;
-    left: 110%;
-    top: 15%;
+    top: 50vh;
     width: 20%;
     height: 70%;
 }
@@ -26,14 +25,15 @@
 
 .blackIcon {
     background-color: black;
+    left: 5vw;
 }
 
-.blackIconPos {
-    top: 10%;
-}
+// .blackIconPos {
+//     left: 10vw;
+// }
 
 .batsuIcon {
-    top: 45%;
+    left: 35vw;
     border: 1px solid black;
 }
 
@@ -61,7 +61,7 @@
 }
 
 .whteIcon {
-    top: 80%;
+    left: 65vw;
     border: 1px solid black;
 }
 
