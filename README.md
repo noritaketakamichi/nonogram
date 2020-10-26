@@ -4,8 +4,11 @@ This was created during my time as a student at Code Chrysalis.
 
 #### You can play game and create your original picture!
 
-# play mode
+# PLAY MODE
 ![nonogram1](https://user-images.githubusercontent.com/63802620/97154818-bbac0900-17b7-11eb-86de-39ecab8db6c3.gif)
+
+# CREATE MODE
+![nonogram2](https://user-images.githubusercontent.com/63802620/97156137-9ae4b300-17b9-11eb-93f6-b2c034706597.gif)
 
 ## Available Scripts
 
