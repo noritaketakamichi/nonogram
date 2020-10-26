@@ -1,6 +1,8 @@
 This project was bootstrapped with [Nonogram game](https://nonogram-staging.herokuapp.com/).<br />
 This was created during my time as a student at Code Chrysalis.
 
+![nonogram1](https://user-images.githubusercontent.com/63802620/97154818-bbac0900-17b7-11eb-86de-39ecab8db6c3.gif)
+
 ## Available Scripts
 
 In the project directory, you can run:
