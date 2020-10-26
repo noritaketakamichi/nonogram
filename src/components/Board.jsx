@@ -49,7 +49,8 @@ function Board(props) {
 		console.log(`upper【${elm}】`);
 		console.log(elm.split(" "));
         return (
-          //   <div className="upperBarContainer">
+			<>
+			{/* <div>hello</div> */}
           <div
             className={classNames(
             //   "upperBarContainer",
@@ -65,7 +66,7 @@ function Board(props) {
               })}
             </div>
           </div>
-          //   </div>
+          </>
         );
       })}
 
