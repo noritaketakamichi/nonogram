@@ -27,7 +27,7 @@
         "@testing-library/user-event": "^7.1.2"
     },
     "scripts": {
-        "start": "yarn setup && node server && yarn build",
+        "start": "node server && yarn build",
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
