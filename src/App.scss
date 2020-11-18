@@ -1,355 +1,715 @@
-.board {
-  position: absolute;
-  left: 20vw;
-  top: 35%;
-  width: 70vw;
-  height: 70vw;
-  border: 3px solid black;
-  z-index: -2;
-}
+@media screen and (min-width: 0px) {
+  .board {
+    position: absolute;
+    left: 20vw;
+    top: 35%;
+    width: 70vw;
+    height: 70vw;
+    border: 3px solid black;
+    z-index: -2;
+  }
 
-.iconBoard {
-  position: absolute;
-  top: 45vh;
-  width: 20%;
-  height: 10vh;
-}
+  .iconBoard {
+    position: absolute;
+    top: 45vh;
+    width: 20%;
+    height: 10vh;
+  }
 
-.icon {
-  position: absolute;
-  height: 0;
-  width: 50%;
-  left: 25%;
-  padding-bottom: 50%;
-}
+  .icon {
+    position: absolute;
+    height: 0;
+    width: 50%;
+    left: 25%;
+    padding-bottom: 50%;
+  }
 
-.blackIcon {
-  background-color: black;
-  left: 5vw;
-}
+  .blackIcon {
+    background-color: black;
+    left: 5vw;
+  }
 
-// .blackIconPos {
-//     left: 10vw;
-// }
+  // .blackIconPos {
+  //     left: 10vw;
+  // }
 
-.batsuIcon {
-  left: 35vw;
-  border: 1px solid black;
-}
+  .batsuIcon {
+    left: 35vw;
+    border: 1px solid black;
+  }
 
-.batsuIcon::before,
-.batsuIcon::after {
-  content: "";
-  display: block;
-  width: 100%;
-  /*バツ線の長さ*/
-  height: 3px;
-  /*バツ線の太さ*/
-  background: #000;
-  transform: rotate(45deg);
-  transform-origin: 0% 50%;
-  position: absolute;
-  top: calc(20% - 5px);
-  left: 14%;
-}
+  .batsuIcon::before,
+  .batsuIcon::after {
+    content: "";
+    display: block;
+    width: 100%;
+    /*バツ線の長さ*/
+    height: 3px;
+    /*バツ線の太さ*/
+    background: #000;
+    transform: rotate(45deg);
+    transform-origin: 0% 50%;
+    position: absolute;
+    top: calc(20% - 5px);
+    left: 14%;
+  }
 
-.batsuIcon::after {
-  transform: rotate(-45deg);
-  transform-origin: 100% 50%;
-  left: auto;
-  right: 14%;
-}
+  .batsuIcon::after {
+    transform: rotate(-45deg);
+    transform-origin: 100% 50%;
+    left: auto;
+    right: 14%;
+  }
 
-.whteIcon {
-  left: 65vw;
-  border: 1px solid black;
-}
+  .whteIcon {
+    left: 65vw;
+    border: 1px solid black;
+  }
 
-.selectedIcon {
-  box-shadow: 5px 5px orange;
-}
+  .selectedIcon {
+    box-shadow: 5px 5px orange;
+  }
 
-.boardElem {
-  position: absolute;
-  border: 3px solid black;
-  width: 10%;
-  height: 10%;
-}
+  .boardElem {
+    position: absolute;
+    border: 3px solid black;
+    width: 10%;
+    height: 10%;
+  }
 
-.blackElem {
-  position: absolute;
-  background-color: black;
-  width: 10%;
-  height: 10%;
-}
+  .blackElem {
+    position: absolute;
+    background-color: black;
+    width: 10%;
+    height: 10%;
+  }
 
-.batsuElem {
-  position: absolute;
-  width: 10%;
-  height: 10%;
-  border: 1px solid black;
-  background-color: white;
-}
+  .batsuElem {
+    position: absolute;
+    width: 10%;
+    height: 10%;
+    border: 1px solid black;
+    background-color: white;
+  }
 
-.batsuElem::before,
-.batsuElem::after {
-  content: "";
-  display: block;
-  width: 100%;
-  /*バツ線の長さ*/
-  height: 3px;
-  /*バツ線の太さ*/
-  background: #000;
-  transform: rotate(45deg);
-  transform-origin: 0% 50%;
-  position: absolute;
-  top: calc(25% - 5px);
-  left: 16%;
-}
+  .batsuElem::before,
+  .batsuElem::after {
+    content: "";
+    display: block;
+    width: 100%;
+    /*バツ線の長さ*/
+    height: 3px;
+    /*バツ線の太さ*/
+    background: #000;
+    transform: rotate(45deg);
+    transform-origin: 0% 50%;
+    position: absolute;
+    top: calc(25% - 5px);
+    left: 16%;
+  }
 
-.batsuElem::after {
-  transform: rotate(-45deg);
-  transform-origin: 100% 50%;
-  left: auto;
-  right: 14%;
-}
+  .batsuElem::after {
+    transform: rotate(-45deg);
+    transform-origin: 100% 50%;
+    left: auto;
+    right: 14%;
+  }
 
-.whiteElem {
-  position: absolute;
-  background-color: white;
-  width: 10%;
-  height: 10%;
-}
+  .whiteElem {
+    position: absolute;
+    background-color: white;
+    width: 10%;
+    height: 10%;
+  }
 
-.x0 {
-  left: 0%;
-}
+  .x0 {
+    left: 0%;
+  }
 
-.x1 {
-  left: 10%;
-}
+  .x1 {
+    left: 10%;
+  }
 
-.x2 {
-  left: 20%;
-}
+  .x2 {
+    left: 20%;
+  }
 
-.x3 {
-  left: 30%;
-}
+  .x3 {
+    left: 30%;
+  }
 
-.x4 {
-  left: 40%;
-}
+  .x4 {
+    left: 40%;
+  }
 
-.x5 {
-  left: 50%;
-}
+  .x5 {
+    left: 50%;
+  }
 
-.x6 {
-  left: 60%;
-}
+  .x6 {
+    left: 60%;
+  }
 
-.x7 {
-  left: 70%;
-}
+  .x7 {
+    left: 70%;
+  }
 
-.x8 {
-  left: 80%;
-}
+  .x8 {
+    left: 80%;
+  }
 
-.x9 {
-  left: 90%;
-}
+  .x9 {
+    left: 90%;
+  }
 
-.y0 {
-  top: 0%;
-}
+  .y0 {
+    top: 0%;
+  }
 
-.y1 {
-  top: 10%;
-}
+  .y1 {
+    top: 10%;
+  }
 
-.y2 {
-  top: 20%;
-}
+  .y2 {
+    top: 20%;
+  }
 
-.y3 {
-  top: 30%;
-}
+  .y3 {
+    top: 30%;
+  }
 
-.y4 {
-  top: 40%;
-}
+  .y4 {
+    top: 40%;
+  }
 
-.y5 {
-  top: 50%;
-}
+  .y5 {
+    top: 50%;
+  }
 
-.y6 {
-  top: 60%;
-}
+  .y6 {
+    top: 60%;
+  }
 
-.y7 {
-  top: 70%;
-}
+  .y7 {
+    top: 70%;
+  }
 
-.y8 {
-  top: 80%;
-}
+  .y8 {
+    top: 80%;
+  }
 
-.y9 {
-  top: 90%;
-}
+  .y9 {
+    top: 90%;
+  }
 
-.upperBar {
-  position: absolute;
-  width: 10%;
-  height: 100%;
-  bottom: 100%;
-  //   writing-mode: vertical-rl;
-  //   text-orientation: upright;
-  font-size: 22px;
-}
+  .upperBar {
+    position: absolute;
+    width: 10%;
+    height: 100%;
+    bottom: 100%;
+    //   writing-mode: vertical-rl;
+    //   text-orientation: upright;
+    font-size: 22px;
+  }
 
-.upperBarContainer {
-  /* フレックスコンテナであることを指定 */
-  display: flex;
+  .upperBarContainer {
+    /* フレックスコンテナであることを指定 */
+    display: flex;
 
-  /* 主軸：左右の配置 */
-  justify-content: space-between;
+    /* 主軸：左右の配置 */
+    justify-content: space-between;
 
-  /* 交差軸：上下の配置 */
-  align-items: flex-end;
-}
-.upperLine {
-//   margin: 10px auto;
-  line-height: 0px;
-}
+    /* 交差軸：上下の配置 */
+    align-items: flex-end;
+  }
+  .upperLine {
+    //   margin: 10px auto;
+    line-height: 0px;
+  }
 
-.center{
-    width:100%;
-}
+  .center {
+    width: 100%;
+  }
 
-.bottom{
-    position:absolute;                  
-    bottom:0; 
-    width:100%;
+  .bottom {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     text-align: center;
+  }
+
+  .leftBar {
+    position: absolute;
+    width: 40%;
+    height: 10%;
+    left: -40%;
+    font-size: 22px;
+  }
+
+  .upperNumbers {
+    position: absolute;
+    right: -60%;
+    bottom: 2%;
+  }
+
+  .leftNumbers {
+    position: absolute;
+    white-space: normal;
+    bottom: -60%;
+    right: 5%;
+  }
+
+  .upper0 {
+    left: 0%;
+  }
+
+  .upper1 {
+    left: 10%;
+  }
+
+  .upper2 {
+    left: 20%;
+  }
+
+  .upper3 {
+    left: 30%;
+  }
+
+  .upper4 {
+    left: 40%;
+  }
+
+  .upper5 {
+    left: 50%;
+  }
+
+  .upper6 {
+    left: 60%;
+  }
+
+  .upper7 {
+    left: 70%;
+  }
+
+  .upper8 {
+    left: 80%;
+  }
+
+  .upper9 {
+    left: 90%;
+  }
+
+  .left0 {
+    top: 0%;
+  }
+
+  .left1 {
+    top: 10%;
+  }
+
+  .left2 {
+    top: 20%;
+  }
+
+  .left3 {
+    top: 30%;
+  }
+
+  .left4 {
+    top: 40%;
+  }
+
+  .left5 {
+    top: 50%;
+  }
+
+  .left6 {
+    top: 60%;
+  }
+
+  .left7 {
+    top: 70%;
+  }
+
+  .left8 {
+    top: 80%;
+  }
+
+  .left9 {
+    top: 90%;
+  }
+
+  .completeBox {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 120%;
+    width: 100%;
+    height: 30%;
+    background-color: orangered;
+    color: white;
+  }
+
+  .completeBox {
+    font-size: 30px;
+  }
 }
 
-.leftBar {
-  position: absolute;
-  width: 40%;
-  height: 10%;
-  left: -40%;
-  font-size: 22px;
-}
+@media screen and (min-width: 500px) {
+  .board {
+    position: absolute;
+    left: 10vh;
+    top: 20vh;
+    width: 40vh;
+    height: 40vh;
+    border: 3px solid black;
+    z-index: -2;
+  }
 
-.upperNumbers {
-  position: absolute;
-  right: -60%;
-  bottom: 2%;
-}
+  .iconBoard {
+    position: absolute;
+    top: 45vh;
+    width: 10vh;
+    height: 10vh;
+  }
 
-.leftNumbers {
-  position: absolute;
-  white-space: normal;
-  bottom: -60%;
-  right: 5%;
-}
+  .icon {
+    position: absolute;
+    height: 0;
+    width: 50%;
+    left: 25%;
+    padding-bottom: 50%;
+  }
 
-.upper0 {
-  left: 0%;
-}
+  .blackIcon {
+    background-color: black;
+    left: 5vh;
+  }
 
-.upper1 {
-  left: 10%;
-}
+  // .blackIconPos {
+  //     left: 10vw;
+  // }
 
-.upper2 {
-  left: 20%;
-}
+  .batsuIcon {
+    left: 20vh;
+    border: 1px solid black;
+  }
 
-.upper3 {
-  left: 30%;
-}
+  .batsuIcon::before,
+  .batsuIcon::after {
+    content: "";
+    display: block;
+    width: 100%;
+    /*バツ線の長さ*/
+    height: 3px;
+    /*バツ線の太さ*/
+    background: #000;
+    transform: rotate(45deg);
+    transform-origin: 0% 50%;
+    position: absolute;
+    top: calc(20% - 5px);
+    left: 14%;
+  }
 
-.upper4 {
-  left: 40%;
-}
+  .batsuIcon::after {
+    transform: rotate(-45deg);
+    transform-origin: 100% 50%;
+    left: auto;
+    right: 14%;
+  }
 
-.upper5 {
-  left: 50%;
-}
+  .whteIcon {
+    left: 35vh;
+    border: 1px solid black;
+  }
 
-.upper6 {
-  left: 60%;
-}
+  .selectedIcon {
+    box-shadow: 5px 5px orange;
+  }
 
-.upper7 {
-  left: 70%;
-}
+  .boardElem {
+    position: absolute;
+    border: 3px solid black;
+    width: 10%;
+    height: 10%;
+  }
 
-.upper8 {
-  left: 80%;
-}
+  .blackElem {
+    position: absolute;
+    background-color: black;
+    width: 10%;
+    height: 10%;
+  }
 
-.upper9 {
-  left: 90%;
-}
+  .batsuElem {
+    position: absolute;
+    width: 10%;
+    height: 10%;
+    border: 1px solid black;
+    background-color: white;
+  }
 
-.left0 {
-  top: 0%;
-}
+  .batsuElem::before,
+  .batsuElem::after {
+    content: "";
+    display: block;
+    width: 100%;
+    /*バツ線の長さ*/
+    height: 3px;
+    /*バツ線の太さ*/
+    background: #000;
+    transform: rotate(45deg);
+    transform-origin: 0% 50%;
+    position: absolute;
+    top: calc(25% - 5px);
+    left: 16%;
+  }
 
-.left1 {
-  top: 10%;
-}
+  .batsuElem::after {
+    transform: rotate(-45deg);
+    transform-origin: 100% 50%;
+    left: auto;
+    right: 14%;
+  }
 
-.left2 {
-  top: 20%;
-}
+  .whiteElem {
+    position: absolute;
+    background-color: white;
+    width: 10%;
+    height: 10%;
+  }
 
-.left3 {
-  top: 30%;
-}
+  .x0 {
+    left: 0%;
+  }
 
-.left4 {
-  top: 40%;
-}
+  .x1 {
+    left: 10%;
+  }
 
-.left5 {
-  top: 50%;
-}
+  .x2 {
+    left: 20%;
+  }
 
-.left6 {
-  top: 60%;
-}
+  .x3 {
+    left: 30%;
+  }
 
-.left7 {
-  top: 70%;
-}
+  .x4 {
+    left: 40%;
+  }
 
-.left8 {
-  top: 80%;
-}
+  .x5 {
+    left: 50%;
+  }
 
-.left9 {
-  top: 90%;
-}
+  .x6 {
+    left: 60%;
+  }
 
-.completeBox {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  bottom: 120%;
-  width: 100%;
-  height: 30%;
-  background-color: orangered;
-  color: white;
-}
+  .x7 {
+    left: 70%;
+  }
 
-.completeBox {
-  font-size: 30px;
+  .x8 {
+    left: 80%;
+  }
+
+  .x9 {
+    left: 90%;
+  }
+
+  .y0 {
+    top: 0%;
+  }
+
+  .y1 {
+    top: 10%;
+  }
+
+  .y2 {
+    top: 20%;
+  }
+
+  .y3 {
+    top: 30%;
+  }
+
+  .y4 {
+    top: 40%;
+  }
+
+  .y5 {
+    top: 50%;
+  }
+
+  .y6 {
+    top: 60%;
+  }
+
+  .y7 {
+    top: 70%;
+  }
+
+  .y8 {
+    top: 80%;
+  }
+
+  .y9 {
+    top: 90%;
+  }
+
+  .upperBar {
+    position: absolute;
+    width: 10%;
+    height: 100%;
+    bottom: 100%;
+    //   writing-mode: vertical-rl;
+    //   text-orientation: upright;
+    font-size: 22px;
+  }
+
+  .upperBarContainer {
+    /* フレックスコンテナであることを指定 */
+    display: flex;
+
+    /* 主軸：左右の配置 */
+    justify-content: space-between;
+
+    /* 交差軸：上下の配置 */
+    align-items: flex-end;
+  }
+  .upperLine {
+    //   margin: 10px auto;
+    line-height: 0px;
+  }
+
+  .center {
+    width: 100%;
+  }
+
+  .bottom {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .leftBar {
+    position: absolute;
+    width: 40%;
+    height: 10%;
+    left: -40%;
+    font-size: 22px;
+  }
+
+  .upperNumbers {
+    position: absolute;
+    right: -60%;
+    bottom: 2%;
+  }
+
+  .leftNumbers {
+    position: absolute;
+    white-space: normal;
+    bottom: -60%;
+    right: 5%;
+  }
+
+  .upper0 {
+    left: 0%;
+  }
+
+  .upper1 {
+    left: 10%;
+  }
+
+  .upper2 {
+    left: 20%;
+  }
+
+  .upper3 {
+    left: 30%;
+  }
+
+  .upper4 {
+    left: 40%;
+  }
+
+  .upper5 {
+    left: 50%;
+  }
+
+  .upper6 {
+    left: 60%;
+  }
+
+  .upper7 {
+    left: 70%;
+  }
+
+  .upper8 {
+    left: 80%;
+  }
+
+  .upper9 {
+    left: 90%;
+  }
+
+  .left0 {
+    top: 0%;
+  }
+
+  .left1 {
+    top: 10%;
+  }
+
+  .left2 {
+    top: 20%;
+  }
+
+  .left3 {
+    top: 30%;
+  }
+
+  .left4 {
+    top: 40%;
+  }
+
+  .left5 {
+    top: 50%;
+  }
+
+  .left6 {
+    top: 60%;
+  }
+
+  .left7 {
+    top: 70%;
+  }
+
+  .left8 {
+    top: 80%;
+  }
+
+  .left9 {
+    top: 90%;
+  }
+
+  .completeBox {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 120%;
+    width: 100%;
+    height: 30%;
+    background-color: orangered;
+    color: white;
+  }
+
+  .completeBox {
+    font-size: 30px;
+  }
 }
